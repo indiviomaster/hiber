@@ -22,7 +22,7 @@ public class User {
 
     private Set<Product> products = new HashSet<>();
     @ManyToMany
-    @JoinTable(name = "shoping",  // Таблица связка
+    @JoinTable(name = "shoping",
             joinColumns = @JoinColumn(name = "user_id"),
             inverseJoinColumns = @JoinColumn(name = "prod_id"))
     public Set<Product> getProducts () {
