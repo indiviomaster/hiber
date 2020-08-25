@@ -3,9 +3,7 @@ package ru.indivio;
 import org.hibernate.annotations.CascadeType;
 
 import javax.persistence.*;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 @Entity
 @Table(name = "product")
@@ -22,11 +20,12 @@ public class Product {
     private int price;
 
 
-    private List<User> users;
+
     @ManyToMany
-    @JoinTable(name = "shoping",
-            joinColumns = @JoinColumn(name = "prod_id"),
+    @JoinTable(name = "user_product",
+            joinColumns = @JoinColumn(name = "product_id"),
             inverseJoinColumns = @JoinColumn(name = "user_id"))
+    private List<User> users;
 
     public List<User> getUsers () {
         return users;
@@ -36,9 +35,9 @@ public class Product {
         this.users = users;
     }
 
-    public void addUser(User user) {
-        users.add(user);
-    }
+//    public void addUser(User user) {
+//        users.add(user);
+//    }
 
 
     public int getId() {
