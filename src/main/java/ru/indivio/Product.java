@@ -1,5 +1,6 @@
 package ru.indivio;
 
+import org.hibernate.annotations.Cascade;
 import org.hibernate.annotations.CascadeType;
 
 import javax.persistence.*;
@@ -22,6 +23,7 @@ public class Product {
 
 
     @ManyToMany
+    @Cascade(org.hibernate.annotations.CascadeType.DELETE)
     @JoinTable(name = "user_product",
             joinColumns = @JoinColumn(name = "product_id"),
             inverseJoinColumns = @JoinColumn(name = "user_id"))
