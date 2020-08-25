@@ -20,16 +20,16 @@ public class User {
     private String name;
 
 
-    private Set<Product> products = new HashSet<>();
+    private List<Product> products;
     @ManyToMany
     @JoinTable(name = "shoping",
             joinColumns = @JoinColumn(name = "user_id"),
             inverseJoinColumns = @JoinColumn(name = "prod_id"))
-    public Set<Product> getProducts () {
+    public List<Product> getProducts () {
         return products;
     }
 
-    public void setProducts(Set<Product> products) {
+    public void setProducts(List<Product> products) {
         this.products = products;
     }
 

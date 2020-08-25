@@ -22,17 +22,17 @@ public class Product {
     private int price;
 
 
-    private Set<User> users = new HashSet<>();
+    private List<User> users;
     @ManyToMany
     @JoinTable(name = "shoping",
             joinColumns = @JoinColumn(name = "prod_id"),
             inverseJoinColumns = @JoinColumn(name = "user_id"))
 
-    public Set<User> getUsers () {
+    public List<User> getUsers () {
         return users;
     }
 
-    public void setUsers(Set<User> users) {
+    public void setUsers(List<User> users) {
         this.users = users;
     }
 
