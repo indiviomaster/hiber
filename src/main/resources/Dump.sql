@@ -147,6 +147,30 @@ INSERT INTO `user` VALUES (1,'NJ'),(2,'Михаил'),(3,'Сергей'),(4,'В�
 UNLOCK TABLES;
 
 --
+-- Table structure for table `user_product`
+--
+
+DROP TABLE IF EXISTS `user_product`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `user_product` (
+  `user_id` int NOT NULL,
+  `product_id` int NOT NULL,
+  KEY `p` (`user_id`,`product_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_ru_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `user_product`
+--
+
+LOCK TABLES `user_product` WRITE;
+/*!40000 ALTER TABLE `user_product` DISABLE KEYS */;
+INSERT INTO `user_product` VALUES (1,1),(1,2),(2,1),(2,2),(2,4),(2,5);
+/*!40000 ALTER TABLE `user_product` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Dumping events for database 'spring_db'
 --
 
@@ -163,4 +187,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-08-25 22:55:12
+-- Dump completed on 2020-08-26  0:09:28
